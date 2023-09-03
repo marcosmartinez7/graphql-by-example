@@ -1,17 +1,14 @@
+import { getJobs } from "./db/jobs.js";
 export const resolvers = {
     Query: {
         jobs: () => {
-            return (
-                [
-                    {
-                        description: "Sw engineer job description",
-                        title: "Software Engineer",
-                        company: "Google",
-                        id: "1",
-                    },
-                ],
-                null
-            );
+            return getJobs();
+        },
+    },
+
+    Job: {
+        date: (job) => {
+            return job.createdAt;
         },
     },
 };

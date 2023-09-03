@@ -7,4 +7,5 @@ type Job {
     title: String!
     company: String
     description: String
+    date: String!
 }
